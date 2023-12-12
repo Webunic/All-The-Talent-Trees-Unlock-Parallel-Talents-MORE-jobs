@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <override>
+    <Item name="" identifier="endocrinebooster" category="Medical" maxstacksize="8" Tags="smallitem,chem,medical,syringe" allowasextracargo="true" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="medcab" />
+      <Price baseprice="1400" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.1" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" amount="1" requiresrecipe="true">
+        <RequiredSkill identifier="medical" level="90" />
+        <RequiredItem identifier="sulphuriteshard" />
+        <RequiredItem identifier="sulphuriteshard" />
+        <RequiredItem identifier="paralyxis" />
+        <RequiredItem identifier="paralyxis" />
+        <RequiredItem identifier="deusizine" />
+      </Fabricate>
+      <Deconstruct time="25">
+        <Item identifier="sulphuricacid" />
+        <Item identifier="sulphuricacid" />
+        <Item identifier="paralyxis" />
+        <Item identifier="deusizine" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/Medical/Medicines.png" sourcerect="448,256,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="303,310,35,67" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="15" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <RequiredSkill identifier="medical" level="35" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" disabledeltatime="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnSuccess" target="Character">
+          <GiveTalentInfo giverandom="true" talentidentifiers="bountyhunter,logisticsexpert,prodigy,inspirationalleader,veteran,travelingtradesman,emergencymaneuvers,sailorwithnoname,camaraderie,downwiththeship,gunsmith,steadytune,protectandserve,warstories,firstaidtraining,physicalconditioning,swole,buff,weaponsmith,bythebook,dontpushit,bootcamp,munitionsexpertise,playingcatchup,mailman,skedaddle,crewlayabout,revengesquad,inspiringtunes,jackinthebox,peerlearning,stationengineer,junctionjunkie,egghead,grounded,remotemonitor,funwithfission,melodicrespite,submarineofthings,aggressiveengineering,samplecollection,salvagecrew,machinemaniac,safetyfirst,multifunctional,engineengineer,ballastdenizen,modularrepairs,oiledmachinery,pumpndump,ironman,retrofit,healthinsurance,nobodyimportantdies,exampleofhealth,laresistance,selfcare,stayinalive,firemanscarry,medicalcompanion,dontdieonme,nopressure,blooddonor" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="Character">
+          <GiveTalentInfo giverandom="true" talentidentifiers="bountyhunter,logisticsexpert,prodigy,inspirationalleader,veteran,travelingtradesman,emergencymaneuvers,sailorwithnoname,camaraderie,downwiththeship,gunsmith,steadytune,protectandserve,warstories,firstaidtraining,physicalconditioning,swole,buff,weaponsmith,bythebook,dontpushit,bootcamp,munitionsexpertise,playingcatchup,mailman,skedaddle,crewlayabout,revengesquad,inspiringtunes,jackinthebox,peerlearning,stationengineer,junctionjunkie,egghead,grounded,remotemonitor,funwithfission,melodicrespite,submarineofthings,aggressiveengineering,samplecollection,salvagecrew,machinemaniac,safetyfirst,multifunctional,engineengineer,ballastdenizen,modularrepairs,oiledmachinery,pumpndump,ironman,retrofit,healthinsurance,nobodyimportantdies,exampleofhealth,laresistance,selfcare,stayinalive,firemanscarry,medicalcompanion,dontdieonme,nopressure,blooddonor" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    </Item>
+  </override>
+</Items>
